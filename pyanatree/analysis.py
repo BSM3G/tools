@@ -123,12 +123,14 @@ class Analysis(object):
         f.SetCompressionLevel(9)
         f.cd()
         for i in self.plots:
-            self.plots[i].Scale(self.sampleInfo["xs"]*self.sampleInfo["lumi"]*self.sampleInfo["eff"]/self.Nev)
+            #we will do the scaling afterwards
+            #self.plots[i].Scale(self.sampleInfo["xs"]*self.sampleInfo["lumi"]*self.sampleInfo["eff"]/self.Nev)
             self.plots[i].Write()
         f.mkdir("profiles","profiles")
         f.cd("profiles")
         for i  in list(self.profiles.values()):
-            self.plots[i].Scale(self.sampleInfo["xs"]*self.sampleInfo["lumi"]*self.sampleInfo["eff"]/self.Nev)
+            #no do not scale profiles
+            #self.plots[i].Scale(self.sampleInfo["xs"]*self.sampleInfo["lumi"]*self.sampleInfo["eff"]/self.Nev)
             i.Write()
         f.Close()
 
