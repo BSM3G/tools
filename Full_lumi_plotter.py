@@ -874,7 +874,7 @@ Errors_histo.SetLineColor(r.kMagenta+1)
 
 Stacked_plot.Draw()
 
-if (generate_data_MC_ratio_plot): Stacked_plot.GetXaxis().SetTitle(plot_designator)
+if not (generate_data_MC_ratio_plot): Stacked_plot.GetXaxis().SetTitle(plot_designator)
 
 Stacked_plot.GetXaxis().SetLabelSize(0.0375)
 Stacked_plot.GetXaxis().SetTitleSize(0.0375)
